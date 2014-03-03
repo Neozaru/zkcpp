@@ -180,7 +180,7 @@ do_completion(zhandle_t* zh) {
 int32_t
 get_xid() {
   static uint32_t xid = 0;
-#if BOOST_VERSION / 100 % 1000 >= 46
+#if BOOST_VERSION / 100 % 1000 >= 48
   return boost::interprocess::ipcdetail::atomic_inc32(&xid);
 #else
   return boost::interprocess::detail::atomic_inc32(&xid);
